@@ -2,7 +2,24 @@
 
 ## Introduction
 
-Project Knot is a decentralized, multi-agent orchestration framework designed to democratize Intellectual Property (IP) intelligence for Indian MSMEs and startups. The system performs high-order reasoning across legal, technical, and commercial datasets, linking global patent data to corporate hierarchies and product disclosures. The primary goal is to provide "Freedom to Operate" (FTO) insights by addressing fragmented data sources, deceptive patent assignees, and siloed R&D contexts.
+Project Knot is a decentralized, multi-agent orchestration framework designed to democratize Intellectual Property (IP) intelligence for Indian MSMEs and startups. The system performs high-order reasoning across legal, technical, and commercial datasets, linking global patent data to corporate hierarchies and product disclosures.
+
+### Core Problem Statement
+
+Indian startups and MSMEs face three critical IP challenges:
+1. **Fragmented Data**: Patent information scattered across USPTO, EPO, and India's CGPDTM with inconsistent formats
+2. **Hidden Ownership**: Deceptive patent assignees using shell companies and subsidiaries to obscure true ownership
+3. **Siloed Context**: R&D teams lacking strategic business intelligence about patent landscapes and commercial applications
+
+### Solution Approach
+
+Project Knot addresses these challenges through a 9-agent architecture that provides:
+- **Unified Data Access**: Automated ingestion and normalization from multiple patent offices
+- **Corporate Intelligence**: Graph-based analysis achieving 90%+ accuracy in identifying ultimate parent companies
+- **Rapid FTO Analysis**: Reducing time-to-insight from 2 weeks to under 10 minutes
+- **Strategic Context**: Linking patents to products, identifying white spaces, and discovering prior art
+
+The system targets Indian MSMEs and startups, providing a "protective shield" against international patent trolls while enabling informed R&D investment decisions.
 
 ## Glossary
 
