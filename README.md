@@ -4,7 +4,7 @@
 
 ## Overview
 
-Project Knot is a decentralized, multi-agent orchestration framework that democratizes Intellectual Property (IP) intelligence for Indian MSMEs and startups. By leveraging Amazon Bedrock's Claude models and a sophisticated 9-agent architecture, Knot provides enterprise-grade patent analysis, Freedom to Operate (FTO) assessments, and corporate intelligence—reducing analysis time from weeks to minutes.
+Project Knot is a decentralized, multi-agent orchestration framework that democratizes Intellectual Property (IP) intelligence for Indian MSMEs and startups. By leveraging Amazon Bedrock's KIRO and Claude models and a sophisticated 9-agent architecture, Knot provides enterprise-grade patent analysis, Freedom to Operate (FTO) assessments, and corporate intelligence—reducing analysis time from weeks to minutes.
 
 ## The Problem
 
@@ -67,7 +67,7 @@ Knot uses specialized AI agents to perform high-order reasoning across legal, te
 
 ## Technology Stack
 
-- **LLM Infrastructure**: Amazon Bedrock with Claude 3.7/3.5 Sonnet
+- **LLM Infrastructure**: Amazon Bedrock with KIRO and Claude 3.7/3.5 Sonnet
 - **Development**: Amazon Q Developer for code generation
 - **IDE**: Kiro for spec-driven development
 - **Databases**: 
@@ -209,7 +209,7 @@ pytest --cov=knot tests/
 ## Acknowledgments
 
 - Built for AWS Hackathon 2024
-- Powered by Amazon Bedrock and Claude AI
+- Powered by Amazon Bedrock, KIRO and Claude AI
 - Developed with Kiro IDE and Amazon Q Developer
 
 ## Contact

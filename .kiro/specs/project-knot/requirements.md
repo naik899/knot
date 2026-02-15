@@ -186,13 +186,13 @@ The system targets Indian MSMEs and startups, providing a "protective shield" ag
 4. WHEN audit logs are generated, THE System SHALL record all data access events with timestamps and user identifiers
 5. WHEN data retention policies apply, THE System SHALL automatically purge user data after the specified retention period
 
-### Requirement 13: Integration with Amazon Bedrock and Claude Models
+### Requirement 13: Integration with Amazon Bedrock, KIRO and Claude Models
 
-**User Story:** As a system administrator, I want the system to leverage Amazon Bedrock's Claude models for reasoning capabilities, so that we can provide high-quality IP intelligence without managing LLM infrastructure.
+**User Story:** As a system administrator, I want the system to leverage Amazon Bedrock's KIRO and Claude models for reasoning capabilities, so that we can provide high-quality IP intelligence without managing LLM infrastructure.
 
 #### Acceptance Criteria
 
-1. WHEN agents require LLM reasoning, THE System SHALL invoke Amazon Bedrock APIs with appropriate Claude model versions
+1. WHEN agents require LLM reasoning, THE System SHALL invoke Amazon Bedrock APIs with appropriate KIRO and Claude model versions
 2. WHEN API calls are made, THE System SHALL implement retry logic and fallback strategies for service interruptions
 3. WHEN token limits are approached, THE System SHALL chunk inputs and aggregate outputs intelligently
 4. WHEN model responses are received, THE System SHALL validate output format and extract structured information

@@ -61,7 +61,7 @@ graph TB
 
 ### Technology Stack
 
-- **LLM Infrastructure**: Amazon Bedrock with Claude 3.7/3.5 Sonnet for reasoning
+- **LLM Infrastructure**: Amazon Bedrock with KIRO and Claude 3.7/3.5 Sonnet for reasoning
 - **Agent Orchestration**: Event-driven architecture with message queues
 - **Data Storage**: 
   - Document store for patent documents (MongoDB/DocumentDB)
@@ -158,12 +158,12 @@ interface AgentStage {
 
 **Algorithm:**
 
-1. **Query Parsing**: Use Claude LLM to extract structured intent from natural language
+1. **Query Parsing**: Use KIRO and Claude LLM to extract structured intent from natural language
 2. **Agent Selection**: Rule-based mapping from intent to required agents
 3. **Dependency Resolution**: Topological sort of agent dependencies
 4. **Parallel Execution**: Execute independent agents concurrently
 5. **Result Aggregation**: Collect and merge results with conflict resolution
-6. **Response Synthesis**: Generate user-friendly summary with Claude LLM
+6. **Response Synthesis**: Generate user-friendly summary with KIRO and Claude LLM
 
 ### Agent 1: Data Custodian
 
@@ -486,7 +486,7 @@ interface RankedOpportunity {
 
 **Clustering Algorithm:**
 
-1. **Embedding Generation**: Use Claude to generate embeddings for patent abstracts
+1. **Embedding Generation**: Use KIRO and Claude to generate embeddings for patent abstracts
 2. **Dimensionality Reduction**: Apply UMAP to reduce to 2D/3D space
 3. **Clustering**: Use DBSCAN to identify dense regions
 4. **Gap Detection**: Find regions with low patent density
@@ -556,7 +556,7 @@ interface FTOReport {
 2. **Filtering**: Exclude expired, abandoned, or geographically irrelevant patents
 3. **Claim Parsing**: Extract independent and dependent claims
 4. **Feature Mapping**: Map product features to claim elements
-5. **Infringement Assessment**: Use Claude LLM for claim-by-claim analysis
+5. **Infringement Assessment**: Use KIRO and Claude LLM for claim-by-claim analysis
 6. **Risk Aggregation**: Combine claim-level risks into patent-level risk
 7. **Report Generation**: Synthesize findings with recommendations
 
@@ -894,13 +894,13 @@ interface Evidence {
 
 ### Property 30: LLM Input Chunking for Token Limits
 
-*For any* input to Claude LLM that exceeds the model's token limit, the system should chunk the input into smaller segments that each fit within the limit, process them separately, and aggregate the outputs.
+*For any* input to KIRO and Claude LLM that exceeds the model's token limit, the system should chunk the input into smaller segments that each fit within the limit, process them separately, and aggregate the outputs.
 
 **Validates: Requirements 13.3**
 
 ### Property 31: LLM Response Validation
 
-*For any* response from Claude LLM, the system should validate that the response matches the expected schema (e.g., JSON structure, required fields) before using the response in downstream processing.
+*For any* response from KIRO and Claude LLM, the system should validate that the response matches the expected schema (e.g., JSON structure, required fields) before using the response in downstream processing.
 
 **Validates: Requirements 13.4**
 
@@ -1183,7 +1183,7 @@ Focus on core functionality for hackathon demonstration:
 
 ### Technology Choices
 
-**LLM Provider**: Amazon Bedrock with Claude 3.7 Sonnet
+**LLM Provider**: Amazon Bedrock with KIRO and Claude 3.7 Sonnet
 - Reasoning: High-quality reasoning, good JSON output, AWS integration
 
 **Database**: 
