@@ -1,0 +1,590 @@
+[
+  {
+    "id": "PAT001",
+    "source": "USPTO",
+    "publication_number": "US10234567B2",
+    "title": "Wireless IoT Temperature Sensor with Cloud Connectivity",
+    "abstract": "A wireless Internet of Things temperature sensor device capable of real-time data transmission to cloud infrastructure for monitoring and analytics applications.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A wireless temperature sensing device comprising: a temperature transducer; a microcontroller for processing sensor data; a wireless communication module for transmitting data to a cloud server; and a power management unit."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The device of claim 1, wherein the wireless communication module uses low-power Bluetooth protocol."},
+      {"number": 3, "type": "dependent", "depends_on": 1, "text": "The device of claim 1, further comprising an onboard data logging memory."}
+    ],
+    "assignees": ["SensorTech Innovations LLC"],
+    "inventors": [{"name": "John Smith", "country": "US"}],
+    "filing_date": "2019-03-15",
+    "publication_date": "2020-06-22",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement devices"}, {"system": "CPC", "code": "H04W4/38", "description": "IoT services"}],
+    "keywords": ["iot", "temperature", "sensor", "wireless", "cloud", "monitoring", "bluetooth"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT002",
+    "source": "USPTO",
+    "publication_number": "US10345678B2",
+    "title": "Real-Time Industrial Temperature Monitoring System",
+    "abstract": "An industrial monitoring system using networked temperature sensors with predictive analytics and alert capabilities for manufacturing environments.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A temperature monitoring system comprising: a plurality of networked temperature sensors; a central processing hub for aggregating sensor data; a predictive analytics engine for detecting anomalies; and an alerting mechanism."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, wherein the predictive analytics engine uses machine learning algorithms."},
+      {"number": 3, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, further comprising a web dashboard for real-time visualization."}
+    ],
+    "assignees": ["TechShield Corp"],
+    "inventors": [{"name": "Maria Chen", "country": "US"}, {"name": "David Park", "country": "US"}],
+    "filing_date": "2018-07-10",
+    "publication_date": "2019-11-05",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement devices"}, {"system": "CPC", "code": "G05B23/02", "description": "Industrial monitoring"}],
+    "keywords": ["temperature", "monitoring", "industrial", "predictive", "analytics", "sensor", "networked", "alert"],
+    "status": "active",
+    "jurisdictions": ["US", "EU"]
+  },
+  {
+    "id": "PAT003",
+    "source": "EPO",
+    "publication_number": "EP3456789B1",
+    "title": "Low-Power IoT Sensor Network Architecture",
+    "abstract": "Architecture for deploying low-power IoT sensor networks with mesh networking capabilities and energy harvesting for extended operation in remote locations.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A low-power sensor network comprising: a mesh network topology with self-healing capabilities; energy harvesting modules; and a gateway device for cloud connectivity."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The network of claim 1, wherein energy harvesting includes solar and thermoelectric generators."}
+    ],
+    "assignees": ["EuroSense GmbH"],
+    "inventors": [{"name": "Hans Mueller", "country": "DE"}],
+    "filing_date": "2017-11-20",
+    "publication_date": "2019-05-15",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "H04W84/18", "description": "Self-organizing networks"}, {"system": "CPC", "code": "H04W4/38", "description": "IoT services"}],
+    "keywords": ["iot", "sensor", "network", "low-power", "mesh", "energy", "harvesting", "wireless"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT004",
+    "source": "USPTO",
+    "publication_number": "US10456789B2",
+    "title": "Cloud-Based Sensor Data Analytics Platform",
+    "abstract": "A cloud computing platform for collecting, processing, and analyzing data from distributed IoT sensors with real-time dashboards and machine learning capabilities.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A cloud-based analytics platform comprising: data ingestion APIs for receiving sensor data; a stream processing engine; machine learning models for pattern recognition; and interactive visualization dashboards."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The platform of claim 1, wherein the stream processing engine supports time-series analysis."}
+    ],
+    "assignees": ["DataVault Holdings"],
+    "inventors": [{"name": "Sarah Johnson", "country": "US"}],
+    "filing_date": "2019-01-05",
+    "publication_date": "2020-08-12",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G06F16/2458", "description": "Data analytics"}, {"system": "CPC", "code": "H04L67/12", "description": "Cloud computing"}],
+    "keywords": ["cloud", "analytics", "sensor", "data", "iot", "machine-learning", "dashboard", "platform"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT005",
+    "source": "USPTO",
+    "publication_number": "US10567890B2",
+    "title": "Miniaturized Temperature Sensor for Wearable Devices",
+    "abstract": "A compact temperature sensing module designed for integration into wearable health monitoring devices with sub-degree accuracy and low power consumption.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A miniaturized temperature sensor comprising: a MEMS-based thermopile; signal conditioning circuitry; a Bluetooth Low Energy transceiver; and a form factor compatible with wearable devices."}
+    ],
+    "assignees": ["WearTech Partners Inc"],
+    "inventors": [{"name": "Lisa Wang", "country": "US"}],
+    "filing_date": "2020-02-28",
+    "publication_date": "2021-09-14",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K13/00", "description": "Thermometers for body temperature"}, {"system": "CPC", "code": "A61B5/01", "description": "Wearable health monitoring"}],
+    "keywords": ["temperature", "sensor", "wearable", "mems", "bluetooth", "miniaturized", "health"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT006",
+    "source": "CGPDTM",
+    "publication_number": "IN202011045678",
+    "title": "Smart Agriculture IoT Monitoring System",
+    "abstract": "An IoT-based agricultural monitoring system using temperature, humidity, and soil moisture sensors for precision farming in Indian agricultural conditions.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An agricultural monitoring system comprising: temperature and humidity sensors deployed in crop fields; soil moisture probes; a solar-powered gateway; and a mobile application for farmer notifications."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, wherein sensors communicate using LoRaWAN protocol."}
+    ],
+    "assignees": ["AgriSense India Pvt Ltd"],
+    "inventors": [{"name": "Rajesh Kumar", "country": "IN"}, {"name": "Priya Sharma", "country": "IN"}],
+    "filing_date": "2020-06-15",
+    "publication_date": "2021-12-20",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "A01G25/16", "description": "Agricultural irrigation monitoring"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["iot", "agriculture", "temperature", "humidity", "soil", "monitoring", "smart-farming", "lorawan"],
+    "status": "active",
+    "jurisdictions": ["IN"]
+  },
+  {
+    "id": "PAT007",
+    "source": "USPTO",
+    "publication_number": "US9876543B2",
+    "title": "Thermocouple Array for Multi-Point Temperature Measurement",
+    "abstract": "A thermocouple array system for simultaneous multi-point temperature measurement in industrial processes with digital signal processing.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A thermocouple array system comprising: multiple thermocouple junctions arranged in a grid pattern; a multiplexer for sequential reading; digital signal processing for noise reduction; and RS-485 communication interface."}
+    ],
+    "assignees": ["Industrial Sensors Corp"],
+    "inventors": [{"name": "Robert Brown", "country": "US"}],
+    "filing_date": "2010-04-12",
+    "publication_date": "2012-01-30",
+    "expiry_date": "2030-04-12",
+    "classifications": [{"system": "CPC", "code": "G01K7/02", "description": "Thermocouple temperature measurement"}],
+    "keywords": ["thermocouple", "temperature", "measurement", "industrial", "multi-point", "digital"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT008",
+    "source": "EPO",
+    "publication_number": "EP2345678B1",
+    "title": "Underwater Temperature and Pressure Sensor Module",
+    "abstract": "A ruggedized sensor module for underwater deployment capable of measuring temperature and pressure at depths up to 500 meters with wireless data retrieval.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An underwater sensor module comprising: a pressure-rated housing; a precision temperature sensor; a pressure transducer; onboard data storage; and an acoustic modem for wireless data transmission."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The module of claim 1, further comprising anti-biofouling coating on sensor elements."}
+    ],
+    "assignees": ["OceanTech Solutions SA"],
+    "inventors": [{"name": "Pierre Dubois", "country": "FR"}],
+    "filing_date": "2015-08-20",
+    "publication_date": "2017-03-15",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "G01K1/14", "description": "Underwater temperature measurement"}, {"system": "CPC", "code": "B63B22/00", "description": "Underwater equipment"}],
+    "keywords": ["underwater", "temperature", "pressure", "sensor", "marine", "acoustic", "ruggedized"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT009",
+    "source": "USPTO",
+    "publication_number": "US8765432B2",
+    "title": "Infrared Non-Contact Temperature Measurement Device",
+    "abstract": "A handheld infrared temperature measurement device with automatic emissivity compensation and Bluetooth connectivity for data logging applications.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A non-contact temperature measurement device comprising: an infrared detector; optics for focusing thermal radiation; automatic emissivity compensation; digital display; and wireless data output."}
+    ],
+    "assignees": ["ThermalVision Inc"],
+    "inventors": [{"name": "James Wilson", "country": "US"}],
+    "filing_date": "2008-11-15",
+    "publication_date": "2010-05-20",
+    "expiry_date": "2028-11-15",
+    "classifications": [{"system": "CPC", "code": "G01J5/00", "description": "Infrared temperature measurement"}],
+    "keywords": ["infrared", "temperature", "non-contact", "measurement", "bluetooth", "emissivity"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT010",
+    "source": "USPTO",
+    "publication_number": "US7654321B2",
+    "title": "Wireless Sensor Network Protocol for Environmental Monitoring",
+    "abstract": "A communication protocol optimized for wireless sensor networks used in environmental monitoring with emphasis on energy efficiency and data reliability.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A wireless communication protocol for sensor networks comprising: time-division multiple access scheduling; adaptive power control; error correction coding; and data aggregation at relay nodes."}
+    ],
+    "assignees": ["NetSense Technologies"],
+    "inventors": [{"name": "Emily Davis", "country": "US"}],
+    "filing_date": "2005-06-30",
+    "publication_date": "2007-02-14",
+    "expiry_date": "2025-06-30",
+    "classifications": [{"system": "CPC", "code": "H04W84/18", "description": "Sensor networks"}],
+    "keywords": ["wireless", "sensor", "network", "protocol", "environmental", "monitoring", "energy-efficient"],
+    "status": "expired",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT011",
+    "source": "USPTO",
+    "publication_number": "US10678901B2",
+    "title": "Smart HVAC Temperature Control Using IoT Sensors",
+    "abstract": "An intelligent HVAC control system that uses distributed IoT temperature sensors and machine learning to optimize building energy consumption.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An HVAC control system comprising: distributed IoT temperature sensors in building zones; a machine learning controller; occupancy detection sensors; and automated damper and valve actuators."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, wherein the machine learning controller uses reinforcement learning for energy optimization."}
+    ],
+    "assignees": ["BuildSmart Technologies LLC"],
+    "inventors": [{"name": "Michael Lee", "country": "US"}],
+    "filing_date": "2019-09-01",
+    "publication_date": "2021-03-16",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "F24F11/30", "description": "HVAC control"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["hvac", "temperature", "iot", "sensor", "smart-building", "energy", "machine-learning", "control"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT012",
+    "source": "EPO",
+    "publication_number": "EP3567890B1",
+    "title": "Edge Computing Gateway for IoT Sensor Networks",
+    "abstract": "An edge computing gateway that processes IoT sensor data locally to reduce latency and bandwidth requirements while supporting cloud synchronization.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An edge computing gateway comprising: multiple sensor input interfaces; a local processing unit with machine learning inference capabilities; secure cloud synchronization module; and a management interface."}
+    ],
+    "assignees": ["EdgeTech AG"],
+    "inventors": [{"name": "Klaus Schmidt", "country": "DE"}],
+    "filing_date": "2018-12-01",
+    "publication_date": "2020-04-22",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H04L67/12", "description": "Cloud computing"}, {"system": "CPC", "code": "G06F9/5072", "description": "Edge computing"}],
+    "keywords": ["edge-computing", "gateway", "iot", "sensor", "cloud", "latency", "machine-learning"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT013",
+    "source": "CGPDTM",
+    "publication_number": "IN202111023456",
+    "title": "Solar-Powered Environmental Monitoring Station for Rural India",
+    "abstract": "A self-contained environmental monitoring station powered by solar energy, measuring temperature, air quality, and weather parameters for rural deployment.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A solar-powered monitoring station comprising: temperature, humidity, and air quality sensors; a solar panel with battery storage; a cellular modem for data transmission; and a ruggedized enclosure."}
+    ],
+    "assignees": ["GreenTech India Solutions"],
+    "inventors": [{"name": "Amit Patel", "country": "IN"}],
+    "filing_date": "2021-03-10",
+    "publication_date": "2022-09-25",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "G01W1/00", "description": "Weather monitoring"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["solar", "environmental", "monitoring", "temperature", "air-quality", "rural", "india"],
+    "status": "active",
+    "jurisdictions": ["IN"]
+  },
+  {
+    "id": "PAT014",
+    "source": "USPTO",
+    "publication_number": "US10789012B2",
+    "title": "Blockchain-Verified IoT Sensor Data Integrity System",
+    "abstract": "A system ensuring the integrity and provenance of IoT sensor data using blockchain technology for critical applications like pharmaceutical cold chain monitoring.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A data integrity system comprising: IoT sensors with cryptographic signing capabilities; a distributed ledger for recording sensor readings; smart contracts for automated compliance verification; and an audit trail interface."}
+    ],
+    "assignees": ["ChainSense Corp"],
+    "inventors": [{"name": "Alex Thompson", "country": "US"}],
+    "filing_date": "2020-05-18",
+    "publication_date": "2022-01-11",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H04L9/3236", "description": "Blockchain"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["blockchain", "iot", "sensor", "data-integrity", "cold-chain", "temperature", "pharmaceutical"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT015",
+    "source": "USPTO",
+    "publication_number": "US10890123B2",
+    "title": "Adaptive Wireless Sensor Communication for Harsh Environments",
+    "abstract": "Wireless communication system for sensors operating in harsh environments with adaptive frequency hopping and interference mitigation.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A wireless communication system for harsh environment sensors comprising: adaptive frequency hopping spread spectrum; interference detection and mitigation; redundant communication paths; and environmental condition monitoring for link quality prediction."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, operating in the ISM band with automatic regulatory compliance."}
+    ],
+    "assignees": ["HarshComm Systems Inc"],
+    "inventors": [{"name": "Thomas Anderson", "country": "US"}],
+    "filing_date": "2019-08-22",
+    "publication_date": "2021-06-08",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H04B1/713", "description": "Spread spectrum communication"}, {"system": "CPC", "code": "H04W4/38", "description": "IoT services"}],
+    "keywords": ["wireless", "sensor", "harsh-environment", "communication", "frequency-hopping", "interference"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT016",
+    "source": "EPO",
+    "publication_number": "EP3678901B1",
+    "title": "Digital Twin Platform for Industrial IoT Sensor Monitoring",
+    "abstract": "A digital twin platform that creates virtual representations of physical sensor networks for simulation, prediction, and optimization of industrial processes.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A digital twin platform comprising: real-time sensor data ingestion; physics-based simulation models; anomaly detection algorithms; and a 3D visualization interface for operator interaction."}
+    ],
+    "assignees": ["TwinTech Europe BV"],
+    "inventors": [{"name": "Jan van der Berg", "country": "NL"}],
+    "filing_date": "2020-01-15",
+    "publication_date": "2021-07-28",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G06F30/20", "description": "Digital twin simulation"}, {"system": "CPC", "code": "G05B23/02", "description": "Industrial monitoring"}],
+    "keywords": ["digital-twin", "iot", "sensor", "simulation", "industrial", "monitoring", "prediction"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT017",
+    "source": "USPTO",
+    "publication_number": "US10901234B2",
+    "title": "Compact Multi-Parameter Environmental Sensor with IoT Connectivity",
+    "abstract": "A compact multi-sensor device measuring temperature, humidity, pressure, and air quality with integrated IoT connectivity for environmental monitoring applications.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A multi-parameter environmental sensor device comprising: a temperature sensor; a humidity sensor; a barometric pressure sensor; a particulate matter sensor; integrated WiFi and Bluetooth connectivity; and a compact enclosure for outdoor deployment."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The device of claim 1, further comprising GPS for location tagging of sensor readings."},
+      {"number": 3, "type": "dependent", "depends_on": 1, "text": "The device of claim 1, wherein sensors are factory-calibrated with digital calibration certificates."}
+    ],
+    "assignees": ["EnviroSense Dynamics LLC"],
+    "inventors": [{"name": "Rachel Green", "country": "US"}, {"name": "Carlos Martinez", "country": "US"}],
+    "filing_date": "2020-10-05",
+    "publication_date": "2022-04-19",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}, {"system": "CPC", "code": "G01W1/00", "description": "Weather monitoring"}],
+    "keywords": ["environmental", "sensor", "temperature", "humidity", "pressure", "iot", "multi-parameter", "air-quality"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT018",
+    "source": "USPTO",
+    "publication_number": "US6543210B2",
+    "title": "Basic Digital Temperature Sensor Circuit",
+    "abstract": "A simple digital temperature sensor circuit with serial output for embedded applications.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A digital temperature sensor circuit comprising: a thermistor; an analog-to-digital converter; a microprocessor; and a serial communication interface."}
+    ],
+    "assignees": ["Legacy Sensors Inc"],
+    "inventors": [{"name": "William Turner", "country": "US"}],
+    "filing_date": "1998-03-20",
+    "publication_date": "2000-01-15",
+    "expiry_date": "2018-03-20",
+    "classifications": [{"system": "CPC", "code": "G01K7/01", "description": "Digital temperature measurement"}],
+    "keywords": ["temperature", "sensor", "digital", "circuit", "embedded"],
+    "status": "expired",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT019",
+    "source": "CGPDTM",
+    "publication_number": "IN202211034567",
+    "title": "IoT-Based Cold Chain Temperature Monitoring for Pharmaceutical Distribution",
+    "abstract": "Temperature monitoring solution for pharmaceutical cold chain logistics in India using IoT sensors with GSM connectivity and regulatory compliance features.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A cold chain monitoring system comprising: temperature sensors attached to pharmaceutical packages; a GSM-enabled data logger; cloud-based monitoring dashboard; and automated regulatory compliance reporting."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, conforming to WHO vaccine storage guidelines."}
+    ],
+    "assignees": ["PharmaTrack Solutions Pvt Ltd"],
+    "inventors": [{"name": "Deepak Verma", "country": "IN"}],
+    "filing_date": "2022-01-20",
+    "publication_date": "2023-07-15",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "G01K1/02", "description": "Temperature measurement"}, {"system": "CPC", "code": "G06Q10/08", "description": "Supply chain management"}],
+    "keywords": ["cold-chain", "temperature", "monitoring", "pharmaceutical", "iot", "gsm", "logistics", "compliance"],
+    "status": "active",
+    "jurisdictions": ["IN"]
+  },
+  {
+    "id": "PAT020",
+    "source": "USPTO",
+    "publication_number": "US11012345B2",
+    "title": "AI-Powered Predictive Maintenance Using Temperature Sensor Data",
+    "abstract": "An artificial intelligence system that analyzes temperature sensor data patterns to predict equipment failures and schedule preventive maintenance.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A predictive maintenance system comprising: temperature sensor arrays on industrial equipment; a deep learning model trained on failure patterns; a maintenance scheduling optimizer; and integration APIs for enterprise asset management systems."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, wherein the deep learning model uses LSTM neural networks for time-series prediction."}
+    ],
+    "assignees": ["PredictAI Systems Inc"],
+    "inventors": [{"name": "Dr. Jennifer Wu", "country": "US"}],
+    "filing_date": "2021-02-14",
+    "publication_date": "2022-10-25",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G05B23/02", "description": "Predictive maintenance"}, {"system": "CPC", "code": "G06N3/08", "description": "Deep learning"}],
+    "keywords": ["predictive-maintenance", "temperature", "sensor", "ai", "deep-learning", "industrial", "lstm"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT021",
+    "source": "EPO",
+    "publication_number": "EP3789012B1",
+    "title": "Autonomous Underwater IoT Sensor Buoy Network",
+    "abstract": "A network of autonomous underwater sensor buoys for oceanographic data collection including temperature, salinity, and current measurements with satellite uplink.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An underwater sensor buoy network comprising: autonomous buoys with temperature and salinity sensors; underwater acoustic communication links; satellite uplink for data relay; and a shore-based data processing center."}
+    ],
+    "assignees": ["MarineNet Systems AB"],
+    "inventors": [{"name": "Erik Lindqvist", "country": "SE"}],
+    "filing_date": "2020-07-01",
+    "publication_date": "2022-02-16",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "G01K1/14", "description": "Underwater temperature measurement"}, {"system": "CPC", "code": "B63B22/00", "description": "Underwater equipment"}],
+    "keywords": ["underwater", "iot", "sensor", "buoy", "oceanographic", "temperature", "autonomous", "satellite"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT022",
+    "source": "USPTO",
+    "publication_number": "US11123456B2",
+    "title": "Self-Calibrating IoT Temperature Sensor with Cloud-Based Drift Correction",
+    "abstract": "An IoT temperature sensor with automatic self-calibration capabilities using cloud-based drift correction algorithms and reference comparisons.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A self-calibrating temperature sensor comprising: a primary temperature sensing element; a reference element for drift detection; cloud-connected calibration algorithms; and automatic correction of sensor readings based on drift analysis."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The sensor of claim 1, wherein calibration drift is detected by comparing readings from primary and reference elements."}
+    ],
+    "assignees": ["CalibrateTech LLC"],
+    "inventors": [{"name": "Amanda Foster", "country": "US"}],
+    "filing_date": "2021-05-10",
+    "publication_date": "2023-01-17",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K15/00", "description": "Sensor calibration"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["self-calibrating", "iot", "temperature", "sensor", "cloud", "drift-correction", "calibration"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT023",
+    "source": "USPTO",
+    "publication_number": "US11234567B2",
+    "title": "Distributed IoT Temperature Monitoring with Anomaly Detection",
+    "abstract": "A distributed temperature monitoring system using IoT sensors with edge-based anomaly detection and cloud reporting for critical infrastructure protection.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A distributed monitoring system comprising: IoT temperature sensors deployed across critical infrastructure; edge processors performing local anomaly detection; a cloud platform for centralized monitoring; and automated alerting with severity classification."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, wherein anomaly detection uses statistical process control methods."},
+      {"number": 3, "type": "dependent", "depends_on": 1, "text": "The system of claim 1, further comprising a mobile application for real-time alert notifications."}
+    ],
+    "assignees": ["InfraGuard Technologies"],
+    "inventors": [{"name": "Daniel Kim", "country": "US"}, {"name": "Sophia Patel", "country": "US"}],
+    "filing_date": "2021-08-25",
+    "publication_date": "2023-05-02",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}, {"system": "CPC", "code": "G06F18/24", "description": "Anomaly detection"}],
+    "keywords": ["iot", "temperature", "monitoring", "anomaly-detection", "distributed", "edge", "cloud", "infrastructure"],
+    "status": "active",
+    "jurisdictions": ["US", "EU"]
+  },
+  {
+    "id": "PAT024",
+    "source": "EPO",
+    "publication_number": "EP3890123B1",
+    "title": "Energy-Autonomous Wireless Temperature Sensor Node",
+    "abstract": "A wireless temperature sensor node powered entirely by thermal energy harvesting, enabling perpetual operation without battery replacement.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An energy-autonomous sensor node comprising: a thermoelectric energy harvester; a temperature sensing element; ultra-low-power wireless transmitter; and power management circuitry for energy-neutral operation."}
+    ],
+    "assignees": ["AutoPower Sensors GmbH"],
+    "inventors": [{"name": "Franz Weber", "country": "AT"}],
+    "filing_date": "2020-11-30",
+    "publication_date": "2022-06-08",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H02N11/00", "description": "Thermoelectric energy harvesting"}, {"system": "CPC", "code": "G01K1/02", "description": "Temperature measurement"}],
+    "keywords": ["energy-harvesting", "wireless", "temperature", "sensor", "autonomous", "thermoelectric", "battery-free"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT025",
+    "source": "USPTO",
+    "publication_number": "US11345678B2",
+    "title": "Quantum Dot Temperature Sensor for Cryogenic Applications",
+    "abstract": "A temperature sensor using quantum dot fluorescence for ultra-high precision measurements in cryogenic and space applications.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A quantum dot temperature sensor comprising: a quantum dot array; UV excitation source; fluorescence detector with spectral analysis; and temperature calculation based on emission wavelength shift."}
+    ],
+    "assignees": ["QuantumSense Research Corp"],
+    "inventors": [{"name": "Dr. Alan Richards", "country": "US"}],
+    "filing_date": "2022-03-15",
+    "publication_date": "2023-11-28",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K11/20", "description": "Luminescent temperature measurement"}],
+    "keywords": ["quantum-dot", "temperature", "sensor", "cryogenic", "fluorescence", "precision"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT026",
+    "source": "CGPDTM",
+    "publication_number": "IN202311045678",
+    "title": "Wearable Body Temperature Monitoring Patch with AI Fever Detection",
+    "abstract": "A flexible wearable patch for continuous body temperature monitoring with AI-based fever detection and telemedicine integration for remote healthcare.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A wearable temperature monitoring patch comprising: a flexible temperature sensor array; wireless BLE connectivity; AI fever detection algorithm; and telemedicine platform integration."}
+    ],
+    "assignees": ["HealthTech India Ltd"],
+    "inventors": [{"name": "Dr. Meera Joshi", "country": "IN"}],
+    "filing_date": "2023-02-01",
+    "publication_date": "2024-08-15",
+    "expiry_date": null,
+    "classifications": [{"system": "IPC", "code": "A61B5/01", "description": "Body temperature measurement"}, {"system": "CPC", "code": "G01K13/00", "description": "Body thermometers"}],
+    "keywords": ["wearable", "temperature", "monitoring", "ai", "fever-detection", "healthcare", "telemedicine", "patch"],
+    "status": "active",
+    "jurisdictions": ["IN"]
+  },
+  {
+    "id": "PAT027",
+    "source": "USPTO",
+    "publication_number": "US11456789B2",
+    "title": "IoT Sensor Data Compression and Transmission Protocol",
+    "abstract": "A data compression protocol optimized for IoT sensor networks that reduces bandwidth requirements while maintaining measurement fidelity.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A data compression protocol for IoT sensors comprising: adaptive sampling rate based on signal variation; lossy compression with configurable fidelity thresholds; delta encoding for time-series data; and efficient binary framing for wireless transmission."}
+    ],
+    "assignees": ["CompressNet Technologies"],
+    "inventors": [{"name": "Paul Roberts", "country": "US"}],
+    "filing_date": "2021-11-20",
+    "publication_date": "2023-08-01",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H03M7/30", "description": "Data compression"}, {"system": "CPC", "code": "H04W4/38", "description": "IoT services"}],
+    "keywords": ["iot", "sensor", "data-compression", "transmission", "protocol", "bandwidth", "wireless"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  },
+  {
+    "id": "PAT028",
+    "source": "EPO",
+    "publication_number": "EP3901234B1",
+    "title": "Fiber Optic Distributed Temperature Sensing for Pipeline Monitoring",
+    "abstract": "A fiber optic distributed temperature sensing system for continuous monitoring of oil and gas pipelines to detect leaks and thermal anomalies.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A distributed temperature sensing system comprising: a fiber optic cable deployed along a pipeline; a Raman backscatter interrogator; real-time temperature profile computation; and leak detection algorithms based on thermal signatures."}
+    ],
+    "assignees": ["FiberSense Europe NV"],
+    "inventors": [{"name": "Marc Janssen", "country": "BE"}],
+    "filing_date": "2019-06-12",
+    "publication_date": "2021-01-20",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "G01K11/32", "description": "Fiber optic temperature sensing"}, {"system": "CPC", "code": "F17D5/02", "description": "Pipeline monitoring"}],
+    "keywords": ["fiber-optic", "temperature", "sensing", "pipeline", "monitoring", "distributed", "leak-detection"],
+    "status": "active",
+    "jurisdictions": ["EU"]
+  },
+  {
+    "id": "PAT029",
+    "source": "USPTO",
+    "publication_number": "US11567890B2",
+    "title": "Multi-Sensor IoT Platform with Real-Time Cloud Analytics",
+    "abstract": "An integrated IoT platform supporting multiple sensor types with real-time cloud-based analytics, machine learning inference, and automated reporting.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "An IoT analytics platform comprising: sensor abstraction layer supporting temperature, humidity, pressure, and motion sensors; real-time data streaming pipeline; cloud-based ML inference engine; and customizable analytics dashboards with automated reporting."},
+      {"number": 2, "type": "dependent", "depends_on": 1, "text": "The platform of claim 1, wherein the ML inference engine supports model hot-swapping without service interruption."}
+    ],
+    "assignees": ["CloudSensor Platforms Inc"],
+    "inventors": [{"name": "Kevin Zhang", "country": "US"}, {"name": "Nina Petrov", "country": "US"}],
+    "filing_date": "2022-06-01",
+    "publication_date": "2024-01-09",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H04L67/12", "description": "Cloud computing"}, {"system": "CPC", "code": "G06F16/2458", "description": "Data analytics"}],
+    "keywords": ["iot", "platform", "sensor", "cloud", "analytics", "machine-learning", "real-time", "multi-sensor"],
+    "status": "active",
+    "jurisdictions": ["US", "EU"]
+  },
+  {
+    "id": "PAT030",
+    "source": "USPTO",
+    "publication_number": "US11678901B2",
+    "title": "Secure IoT Sensor Communication Using Post-Quantum Cryptography",
+    "abstract": "A security framework for IoT sensor communications implementing post-quantum cryptographic algorithms to protect against future quantum computing threats.",
+    "claims": [
+      {"number": 1, "type": "independent", "depends_on": null, "text": "A secure IoT communication system comprising: lattice-based key exchange protocol; lightweight symmetric encryption for sensor data; certificate-less authentication scheme; and secure firmware update mechanism."}
+    ],
+    "assignees": ["QuantumShield Security Inc"],
+    "inventors": [{"name": "Dr. Catherine Moore", "country": "US"}],
+    "filing_date": "2022-09-15",
+    "publication_date": "2024-04-02",
+    "expiry_date": null,
+    "classifications": [{"system": "CPC", "code": "H04L9/08", "description": "Post-quantum cryptography"}, {"system": "CPC", "code": "H04W12/03", "description": "IoT security"}],
+    "keywords": ["iot", "security", "post-quantum", "cryptography", "sensor", "communication", "encryption"],
+    "status": "active",
+    "jurisdictions": ["US"]
+  }
+]

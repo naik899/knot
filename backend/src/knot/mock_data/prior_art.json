@@ -1,0 +1,102 @@
+[
+  {
+    "id": "PA001",
+    "title": "IEEE 802.15.4 - Wireless Sensor Network Standard",
+    "source_type": "standard",
+    "source": "IEEE Standards Association",
+    "publication_date": "2003-10-01",
+    "relevant_text": "Defines the physical layer and media access control for low-rate wireless personal area networks, establishing the foundation for IoT sensor communication protocols including temperature sensor data transmission over wireless channels.",
+    "keywords": ["wireless", "sensor", "network", "iot", "communication", "protocol", "ieee", "standard"],
+    "url": "https://standards.ieee.org/standard/802_15_4.html"
+  },
+  {
+    "id": "PA002",
+    "title": "Wireless Sensor Networks: A Survey",
+    "source_type": "academic",
+    "source": "Computer Networks Journal, Elsevier",
+    "publication_date": "2002-03-15",
+    "relevant_text": "Comprehensive survey of wireless sensor network architectures including temperature monitoring applications, energy-efficient protocols, and cloud-based data aggregation techniques for distributed sensing.",
+    "keywords": ["wireless", "sensor", "network", "survey", "temperature", "monitoring", "cloud", "energy-efficient"],
+    "url": "https://doi.org/10.1016/example-survey"
+  },
+  {
+    "id": "PA003",
+    "title": "TinyOS: An Operating System for Sensor Networks",
+    "source_type": "academic",
+    "source": "ACM SenSys Conference",
+    "publication_date": "2004-11-03",
+    "relevant_text": "Describes TinyOS operating system for wireless sensor motes with built-in support for temperature sensing, mesh networking, and data collection from distributed sensor deployments.",
+    "keywords": ["tinyos", "sensor", "network", "operating-system", "mesh", "temperature", "distributed"],
+    "url": "https://doi.org/10.1145/example-tinyos"
+  },
+  {
+    "id": "PA004",
+    "title": "Cloud Computing for IoT: Architecture and Implementation",
+    "source_type": "academic",
+    "source": "IEEE Internet of Things Journal",
+    "publication_date": "2015-06-20",
+    "relevant_text": "Proposes architecture for connecting IoT sensors to cloud platforms for data storage and analytics, including temperature sensor data pipelines with real-time processing and machine learning analysis.",
+    "keywords": ["cloud", "iot", "architecture", "sensor", "temperature", "analytics", "machine-learning", "real-time"],
+    "url": "https://doi.org/10.1109/example-cloud-iot"
+  },
+  {
+    "id": "PA005",
+    "title": "US5678901 - Digital Temperature Sensor with Serial Interface",
+    "source_type": "patent",
+    "source": "USPTO",
+    "publication_date": "1997-10-14",
+    "relevant_text": "Early digital temperature sensor patent describing a semiconductor temperature sensing element with digital serial output, forming the basis for modern IoT temperature sensors.",
+    "keywords": ["temperature", "sensor", "digital", "serial", "semiconductor"],
+    "url": "https://patents.google.com/patent/US5678901"
+  },
+  {
+    "id": "PA006",
+    "title": "Zigbee Specification for Home Automation",
+    "source_type": "standard",
+    "source": "Zigbee Alliance",
+    "publication_date": "2004-12-14",
+    "relevant_text": "Zigbee home automation profile including temperature sensor cluster definitions, wireless communication protocols, and mesh networking for smart home sensor networks.",
+    "keywords": ["zigbee", "sensor", "wireless", "mesh", "temperature", "home-automation", "iot"],
+    "url": "https://zigbeealliance.org/spec"
+  },
+  {
+    "id": "PA007",
+    "title": "MQTT Protocol Specification v3.1",
+    "source_type": "standard",
+    "source": "OASIS",
+    "publication_date": "2010-10-25",
+    "relevant_text": "Message Queuing Telemetry Transport protocol designed for IoT and sensor communications, providing lightweight publish-subscribe messaging for temperature sensor data transmission to cloud servers.",
+    "keywords": ["mqtt", "iot", "sensor", "protocol", "cloud", "messaging", "temperature", "publish-subscribe"],
+    "url": "https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html"
+  },
+  {
+    "id": "PA008",
+    "title": "Machine Learning for Predictive Maintenance: A Review",
+    "source_type": "academic",
+    "source": "Journal of Manufacturing Systems",
+    "publication_date": "2018-04-10",
+    "relevant_text": "Review of machine learning techniques applied to predictive maintenance using sensor data including temperature, vibration, and current measurements from industrial equipment.",
+    "keywords": ["machine-learning", "predictive-maintenance", "sensor", "temperature", "industrial", "monitoring"],
+    "url": "https://doi.org/10.1016/example-ml-maintenance"
+  },
+  {
+    "id": "PA009",
+    "title": "Energy Harvesting for Wireless Sensor Networks",
+    "source_type": "academic",
+    "source": "Sensors Journal, MDPI",
+    "publication_date": "2014-08-22",
+    "relevant_text": "Survey of energy harvesting techniques for wireless sensor nodes including thermoelectric, solar, and kinetic energy sources enabling battery-free temperature sensor operation.",
+    "keywords": ["energy-harvesting", "wireless", "sensor", "thermoelectric", "solar", "battery-free", "temperature"],
+    "url": "https://doi.org/10.3390/example-energy"
+  },
+  {
+    "id": "PA010",
+    "title": "EP1234567 - Underwater Acoustic Sensor Communication System",
+    "source_type": "patent",
+    "source": "EPO",
+    "publication_date": "2005-05-18",
+    "relevant_text": "Early patent describing acoustic modem communication for underwater sensors including temperature measurement, data logging, and wireless retrieval through acoustic signals.",
+    "keywords": ["underwater", "acoustic", "sensor", "temperature", "communication", "modem", "marine"],
+    "url": "https://patents.google.com/patent/EP1234567"
+  }
+]

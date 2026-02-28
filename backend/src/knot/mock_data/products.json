@@ -1,0 +1,92 @@
+[
+  {
+    "id": "PROD001",
+    "name": "TempGuard Pro IoT Sensor",
+    "manufacturer": "SensorTech Innovations LLC",
+    "description": "Industrial-grade wireless IoT temperature sensor with cloud connectivity and real-time monitoring dashboard.",
+    "specifications": {"accuracy": "±0.1°C", "range": "-40 to 125°C", "wireless": "WiFi + BLE", "power": "Battery or USB-C"},
+    "availability": "commercial",
+    "url": "https://example.com/tempguard-pro"
+  },
+  {
+    "id": "PROD002",
+    "name": "ShieldTemp Monitor",
+    "manufacturer": "TechShield Corp",
+    "description": "Enterprise temperature monitoring system with predictive analytics for manufacturing environments.",
+    "specifications": {"sensors": "Up to 500 nodes", "analytics": "ML-based", "alerts": "Email/SMS/API", "dashboard": "Web-based"},
+    "availability": "commercial",
+    "url": "https://example.com/shieldtemp"
+  },
+  {
+    "id": "PROD003",
+    "name": "AgriTemp Soil Monitor",
+    "manufacturer": "AgriSense India Pvt Ltd",
+    "description": "Solar-powered agricultural temperature and soil moisture monitoring system for Indian farms.",
+    "specifications": {"sensors": "Temperature + Soil Moisture", "connectivity": "LoRaWAN", "power": "Solar", "app": "Android/iOS"},
+    "availability": "commercial",
+    "url": "https://example.com/agritemp"
+  },
+  {
+    "id": "PROD004",
+    "name": "DeepSea Sensor Pod",
+    "manufacturer": "OceanTech Solutions SA",
+    "description": "Ruggedized underwater temperature and pressure sensor for marine research at depths up to 500m.",
+    "specifications": {"depth_rating": "500m", "accuracy": "±0.01°C", "data_retrieval": "Acoustic modem", "battery_life": "2 years"},
+    "availability": "commercial",
+    "url": "https://example.com/deepsea-pod"
+  },
+  {
+    "id": "PROD005",
+    "name": "ColdChain Tracker",
+    "manufacturer": "PharmaTrack Solutions Pvt Ltd",
+    "description": "GSM-enabled temperature tracking device for pharmaceutical cold chain logistics with WHO compliance.",
+    "specifications": {"range": "-30 to 70°C", "connectivity": "GSM/4G", "compliance": "WHO PQS", "logging": "15-second intervals"},
+    "availability": "commercial",
+    "url": "https://example.com/coldchain-tracker"
+  },
+  {
+    "id": "PROD006",
+    "name": "EcoSense Multi-Parameter Station",
+    "manufacturer": "EnviroSense Dynamics LLC",
+    "description": "Compact multi-parameter environmental sensor measuring temperature, humidity, pressure, and air quality.",
+    "specifications": {"parameters": "T/RH/P/PM2.5", "connectivity": "WiFi + BLE", "GPS": "Integrated", "enclosure": "IP67"},
+    "availability": "commercial",
+    "url": "https://example.com/ecosense"
+  },
+  {
+    "id": "PROD007",
+    "name": "FeverWatch Patch",
+    "manufacturer": "HealthTech India Ltd",
+    "description": "Flexible wearable patch for continuous body temperature monitoring with AI fever detection.",
+    "specifications": {"accuracy": "±0.05°C", "connectivity": "BLE 5.0", "wear_time": "72 hours", "ai": "Fever prediction"},
+    "availability": "prototype",
+    "url": "https://example.com/feverwatch"
+  },
+  {
+    "id": "PROD008",
+    "name": "InfraGuard Distributed Monitor",
+    "manufacturer": "InfraGuard Technologies",
+    "description": "Distributed temperature monitoring system for critical infrastructure with edge-based anomaly detection.",
+    "specifications": {"nodes": "Up to 10000", "edge_processing": "Built-in ML", "cloud": "AWS/Azure", "alerts": "Multi-channel"},
+    "availability": "commercial",
+    "url": "https://example.com/infraguard"
+  },
+  {
+    "id": "PROD009",
+    "name": "CloudSensor IoT Platform",
+    "manufacturer": "CloudSensor Platforms Inc",
+    "description": "Multi-sensor IoT platform with real-time cloud analytics and machine learning inference engine.",
+    "specifications": {"sensors": "Any type", "analytics": "Real-time ML", "dashboards": "Customizable", "api": "REST + WebSocket"},
+    "availability": "commercial",
+    "url": "https://example.com/cloudsensor"
+  },
+  {
+    "id": "PROD010",
+    "name": "PipeGuard DTS System",
+    "manufacturer": "FiberSense Europe NV",
+    "description": "Fiber optic distributed temperature sensing system for continuous pipeline monitoring and leak detection.",
+    "specifications": {"range": "50km per unit", "resolution": "1m spatial", "accuracy": "±0.5°C", "response": "Real-time"},
+    "availability": "commercial",
+    "url": "https://example.com/pipeguard"
+  }
+]
