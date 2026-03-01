@@ -1,17 +1,49 @@
 """Agent 9: Router Agent - Query parsing, execution planning, orchestration, synthesis."""
 
+from __future__ import annotations
+
 import re
+from typing import TYPE_CHECKING
 
 from knot.agents.base import BaseAgent
 from knot.models.messages import AgentRequest
 from knot.models.query import QueryIntent, ExecutionPlan, AgentStage
 
+if TYPE_CHECKING:
+    from knot.services.llm_service import LLMService
+
+
+_QUERY_PARSE_SYSTEM = """\
+You are a patent intelligence query parser. Given a natural language query, \
+extract structured intent. Return ONLY valid JSON with these fields:
+{
+  "primary_goal": one of "fto_analysis", "landscape", "validity", "corporate_intel", "product_match", "patent_search",
+  "entities": {
+    "technologies": [list of technology terms],
+    "products": [list of product names],
+    "companies": [list of company names],
+    "patents": [list of patent IDs like US1234567]
+  },
+  "constraints": {
+    "jurisdictions": [list of 2-letter country codes, e.g. "US", "IN", "EU"]
+  }
+}
+"""
+
+_SYNTHESIS_SYSTEM = """\
+You are an IP intelligence analyst. Given the analysis results below, write a \
+concise executive summary (3-5 paragraphs) with actionable recommendations for \
+an MSME founder. Be specific about risks, opportunities, and next steps. \
+Do not use markdown headers — use plain prose with bullet points where helpful.\
+"""
+
 
 class RouterAgent(BaseAgent):
     agent_name = "router"
 
-    def __init__(self, agents: dict[str, BaseAgent]):
+    def __init__(self, agents: dict[str, BaseAgent], llm_service: "LLMService | None" = None):
         self.agents = agents
+        self._llm = llm_service
 
     def execute(self, task_type: str, payload: dict) -> dict:
         if task_type == "route_query":
@@ -45,16 +77,25 @@ class RouterAgent(BaseAgent):
         return response
 
     def parse_query(self, query: str) -> QueryIntent:
-        """Parse natural language query into structured intent using rule-based NLP."""
+        """Parse natural language query into structured intent.
+
+        Uses LLM when available, falls back to rule-based keyword matching.
+        """
+        # Try LLM-powered parsing first
+        if self._llm and self._llm.is_available:
+            parsed = self._llm.chat_json(_QUERY_PARSE_SYSTEM, query, max_tokens=512)
+            if parsed:
+                return QueryIntent(
+                    primary_goal=parsed.get("primary_goal", "patent_search"),
+                    entities=parsed.get("entities", {}),
+                    constraints=parsed.get("constraints", {}),
+                    raw_query=query,
+                )
+
+        # Fallback: rule-based parsing
         query_lower = query.lower()
-
-        # Determine primary goal
         primary_goal = self._detect_goal(query_lower)
-
-        # Extract entities
         entities = self._extract_entities(query_lower)
-
-        # Extract constraints
         constraints = self._extract_constraints(query_lower)
 
         return QueryIntent(
@@ -265,16 +306,27 @@ class RouterAgent(BaseAgent):
         }
 
     def _build_executive_summary(self, intent: QueryIntent, sections: list[dict]) -> str:
-        """Build a concise executive summary."""
+        """Build a concise executive summary. Uses LLM when available."""
+        # Rule-based summary (used as fallback and as LLM input context)
         parts = [f"Analysis for: {intent.raw_query}\n"]
-
         for section in sections:
             parts.append(f"- {section['title']}: {section.get('summary', '')}")
             if 'recommendations' in section:
                 for rec in section['recommendations']:
                     parts.append(f"  * {rec}")
+        rule_based = "\n".join(parts)
 
-        return "\n".join(parts)
+        if self._llm and self._llm.is_available:
+            import json
+            context = json.dumps(
+                {"query": intent.raw_query, "sections": sections},
+                default=str,
+            )
+            llm_summary = self._llm.chat(_SYNTHESIS_SYSTEM, context, max_tokens=1024)
+            if llm_summary:
+                return llm_summary
+
+        return rule_based
 
     def _detect_goal(self, query: str) -> str:
         """Detect the primary goal from query text."""
