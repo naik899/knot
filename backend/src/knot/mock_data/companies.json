@@ -1,0 +1,152 @@
+[
+  {
+    "id": "COMP001",
+    "canonical_name": "TechGlobal Corp",
+    "aliases": ["TechGlobal", "TechGlobal Corporation", "TG Corp"],
+    "ultimate_parent_id": null,
+    "subsidiaries": ["COMP002", "COMP003", "COMP004"],
+    "jurisdiction": "US",
+    "company_type": "corporation",
+    "patent_ids": []
+  },
+  {
+    "id": "COMP002",
+    "canonical_name": "SensorTech Innovations LLC",
+    "aliases": ["SensorTech", "SensorTech Innovations"],
+    "ultimate_parent_id": "COMP001",
+    "subsidiaries": [],
+    "jurisdiction": "US",
+    "company_type": "subsidiary",
+    "patent_ids": ["PAT001"]
+  },
+  {
+    "id": "COMP003",
+    "canonical_name": "TechShield Corp",
+    "aliases": ["TechShield", "TechShield Corporation"],
+    "ultimate_parent_id": "COMP001",
+    "subsidiaries": [],
+    "jurisdiction": "US",
+    "company_type": "shell",
+    "patent_ids": ["PAT002"]
+  },
+  {
+    "id": "COMP004",
+    "canonical_name": "DataVault Holdings",
+    "aliases": ["DataVault", "DataVault Holdings LLC"],
+    "ultimate_parent_id": "COMP001",
+    "subsidiaries": ["COMP005"],
+    "jurisdiction": "US",
+    "company_type": "shell",
+    "patent_ids": ["PAT004"]
+  },
+  {
+    "id": "COMP005",
+    "canonical_name": "CalibrateTech LLC",
+    "aliases": ["CalibrateTech"],
+    "ultimate_parent_id": "COMP001",
+    "subsidiaries": [],
+    "jurisdiction": "US",
+    "company_type": "subsidiary",
+    "patent_ids": ["PAT022"]
+  },
+  {
+    "id": "COMP006",
+    "canonical_name": "EuroSense GmbH",
+    "aliases": ["EuroSense"],
+    "ultimate_parent_id": null,
+    "subsidiaries": ["COMP007"],
+    "jurisdiction": "DE",
+    "company_type": "corporation",
+    "patent_ids": ["PAT003"]
+  },
+  {
+    "id": "COMP007",
+    "canonical_name": "AutoPower Sensors GmbH",
+    "aliases": ["AutoPower Sensors", "AutoPower"],
+    "ultimate_parent_id": "COMP006",
+    "subsidiaries": [],
+    "jurisdiction": "AT",
+    "company_type": "subsidiary",
+    "patent_ids": ["PAT024"]
+  },
+  {
+    "id": "COMP008",
+    "canonical_name": "AgriSense India Pvt Ltd",
+    "aliases": ["AgriSense India", "AgriSense"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "IN",
+    "company_type": "corporation",
+    "patent_ids": ["PAT006"]
+  },
+  {
+    "id": "COMP009",
+    "canonical_name": "OceanTech Solutions SA",
+    "aliases": ["OceanTech Solutions", "OceanTech"],
+    "ultimate_parent_id": null,
+    "subsidiaries": ["COMP010"],
+    "jurisdiction": "FR",
+    "company_type": "corporation",
+    "patent_ids": ["PAT008"]
+  },
+  {
+    "id": "COMP010",
+    "canonical_name": "MarineNet Systems AB",
+    "aliases": ["MarineNet Systems", "MarineNet"],
+    "ultimate_parent_id": "COMP009",
+    "subsidiaries": [],
+    "jurisdiction": "SE",
+    "company_type": "subsidiary",
+    "patent_ids": ["PAT021"]
+  },
+  {
+    "id": "COMP011",
+    "canonical_name": "PharmaTrack Solutions Pvt Ltd",
+    "aliases": ["PharmaTrack Solutions", "PharmaTrack"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "IN",
+    "company_type": "corporation",
+    "patent_ids": ["PAT019"]
+  },
+  {
+    "id": "COMP012",
+    "canonical_name": "HealthTech India Ltd",
+    "aliases": ["HealthTech India", "HealthTech"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "IN",
+    "company_type": "corporation",
+    "patent_ids": ["PAT026"]
+  },
+  {
+    "id": "COMP013",
+    "canonical_name": "GreenTech India Solutions",
+    "aliases": ["GreenTech India", "GreenTech"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "IN",
+    "company_type": "corporation",
+    "patent_ids": ["PAT013"]
+  },
+  {
+    "id": "COMP014",
+    "canonical_name": "InfraGuard Technologies",
+    "aliases": ["InfraGuard"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "US",
+    "company_type": "corporation",
+    "patent_ids": ["PAT023"]
+  },
+  {
+    "id": "COMP015",
+    "canonical_name": "CloudSensor Platforms Inc",
+    "aliases": ["CloudSensor Platforms", "CloudSensor"],
+    "ultimate_parent_id": null,
+    "subsidiaries": [],
+    "jurisdiction": "US",
+    "company_type": "corporation",
+    "patent_ids": ["PAT029"]
+  }
+]
