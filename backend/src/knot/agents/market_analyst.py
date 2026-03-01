@@ -1,5 +1,9 @@
 """Agent 3: Market Analyst - Patent-product keyword matching."""
 
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 from knot.agents.base import BaseAgent
 from knot.models.product import ProductMatch
 from knot.services.similarity import keyword_similarity, claim_text_similarity
@@ -7,13 +11,28 @@ from knot.services.text_processing import extract_keywords
 from knot.stores.patent_store import PatentStore
 from knot.stores.search_store import SearchStore
 
+if TYPE_CHECKING:
+    from knot.services.llm_service import LLMService
+
+_PATENT_PRODUCT_SYSTEM = """\
+You are a patent-product matching analyst. Given a patent's title, abstract, \
+and keywords alongside a product description, assess how relevant the patent \
+is to the product. Return ONLY valid JSON:
+{
+  "relevance_score": 0.0-1.0,
+  "evidence": ["reason 1", "reason 2"],
+  "matching_claims_hint": [list of claim numbers most relevant, or empty]
+}
+"""
+
 
 class MarketAnalystAgent(BaseAgent):
     agent_name = "market_analyst"
 
-    def __init__(self, patent_store: PatentStore, search_store: SearchStore):
+    def __init__(self, patent_store: PatentStore, search_store: SearchStore, llm_service: "LLMService | None" = None):
         self.patent_store = patent_store
         self.search_store = search_store
+        self._llm = llm_service
 
     def execute(self, task_type: str, payload: dict) -> dict:
         if task_type == "find_product_matches":
@@ -77,16 +96,33 @@ class MarketAnalystAgent(BaseAgent):
 
         all_patents = self.patent_store.get_all()
         matches = []
+        use_llm = self._llm and self._llm.is_available
 
         for patent in all_patents:
             sim = keyword_similarity(keywords, patent.keywords)
+            evidence = [f"Keyword overlap: {sim:.2f}"]
+            matched_kw = sorted(set(k.lower() for k in keywords) & set(k.lower() for k in patent.keywords))
+
+            # LLM re-scoring for candidates that pass keyword threshold
+            if use_llm and sim > 0.05:
+                user_msg = (
+                    f"Patent: {patent.title}\n"
+                    f"Patent keywords: {', '.join(patent.keywords[:15])}\n\n"
+                    f"Product description: {description[:500]}"
+                )
+                llm_result = self._llm.chat_json(_PATENT_PRODUCT_SYSTEM, user_msg, max_tokens=256)
+                if llm_result:
+                    sim = float(llm_result.get("relevance_score", sim))
+                    evidence = llm_result.get("evidence", evidence)
+
             if sim > 0.1:
                 matches.append({
                     "patent_id": patent.id,
                     "patent_title": patent.title,
                     "assignee": patent.assignees[0] if patent.assignees else "",
                     "similarity": sim,
-                    "matched_keywords": sorted(set(k.lower() for k in keywords) & set(k.lower() for k in patent.keywords)),
+                    "matched_keywords": matched_kw,
+                    "evidence": evidence,
                 })
 
         matches.sort(key=lambda m: m["similarity"], reverse=True)

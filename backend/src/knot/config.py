@@ -11,6 +11,19 @@ class Settings(BaseSettings):
     port: int = 8000
     api_prefix: str = "/api/v1"
 
+    # Azure OpenAI
+    azure_openai_endpoint: str = ""
+    azure_openai_api_key: str = ""
+    azure_openai_api_version: str = "2024-10-21"
+    azure_openai_chat_deployment: str = ""
+    azure_openai_embedding_deployment: str = ""
+    llm_enabled: bool = True
+    llm_max_tokens: int = 4096
+    llm_temperature: float = 0.1
+
+    # Deep Agent orchestration
+    deepagent_enabled: bool = True
+
     # Rate limiting (simulated)
     max_requests_per_minute: int = 60
 

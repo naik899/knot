@@ -6,6 +6,7 @@ from pydantic import BaseModel, Field
 class PatentCluster(BaseModel):
     id: str
     label: str = ""
+    description: str = ""
     keywords: list[str] = Field(default_factory=list)
     patent_ids: list[str] = Field(default_factory=list)
     density: float = 0.0

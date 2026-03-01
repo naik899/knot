@@ -1,6 +1,9 @@
 """Agent 7: FTO Risk Analyst - Claim-by-claim analysis, risk levels, exclude expired."""
 
+from __future__ import annotations
+
 from datetime import date
+from typing import TYPE_CHECKING
 
 from knot.agents.base import BaseAgent
 from knot.models.fto import ClaimMatch, InfringementAnalysis, FTOReport
@@ -8,12 +11,37 @@ from knot.services.similarity import claim_text_similarity, determine_risk_level
 from knot.services.text_processing import extract_keywords
 from knot.stores.patent_store import PatentStore
 
+if TYPE_CHECKING:
+    from knot.services.llm_service import LLMService
+
+_CLAIM_ANALYSIS_SYSTEM = """\
+You are a patent claim analyst. Compare the patent claim against the product \
+description. Assess infringement risk (high/medium/low), provide a similarity \
+score (0.0-1.0), explain your reasoning in 2-3 sentences, and suggest \
+mitigation steps if risk is medium or high.
+
+Return ONLY valid JSON:
+{
+  "risk_level": "high" | "medium" | "low",
+  "similarity_score": 0.0-1.0,
+  "reasoning": "...",
+  "mitigation_suggestions": ["..."]
+}
+"""
+
+_FTO_RECOMMENDATION_SYSTEM = """\
+You are a patent attorney assistant. Given the FTO analysis results below, \
+write 2-4 concise, actionable recommendations for the product team. \
+Return ONLY a JSON array of strings, e.g. ["rec1", "rec2"].\
+"""
+
 
 class FTOAnalystAgent(BaseAgent):
     agent_name = "fto_analyst"
 
-    def __init__(self, patent_store: PatentStore):
+    def __init__(self, patent_store: PatentStore, llm_service: "LLMService | None" = None):
         self.patent_store = patent_store
+        self._llm = llm_service
 
     def execute(self, task_type: str, payload: dict) -> dict:
         if task_type == "analyze_fto":
@@ -55,11 +83,30 @@ class FTOAnalystAgent(BaseAgent):
             # Claim-by-claim analysis
             claim_matches = []
             max_risk = "low"
+            use_llm = self._llm and self._llm.is_available
 
             for claim in patent.claims:
-                sim, matched_kw = claim_text_similarity(claim.text, description)
-                if sim > 0.05:  # Low threshold to catch potential matches
+                llm_result = None
+                if use_llm:
+                    user_msg = (
+                        f"Patent claim (claim {claim.number}):\n{claim.text}\n\n"
+                        f"Product description:\n{description}"
+                    )
+                    llm_result = self._llm.chat_json(_CLAIM_ANALYSIS_SYSTEM, user_msg, max_tokens=512)
+
+                if llm_result:
+                    sim = float(llm_result.get("similarity_score", 0.0))
+                    risk = llm_result.get("risk_level", "low")
+                    reasoning = llm_result.get("reasoning", "")
+                    mitigations = llm_result.get("mitigation_suggestions", [])
+                    matched_kw = []  # LLM reasoning replaces keyword matching
+                else:
+                    sim, matched_kw = claim_text_similarity(claim.text, description)
                     risk = determine_risk_level(sim)
+                    reasoning = ""
+                    mitigations = []
+
+                if sim > 0.05:
                     claim_matches.append(ClaimMatch(
                         patent_id=patent.id,
                         claim_number=claim.number,
@@ -67,6 +114,8 @@ class FTOAnalystAgent(BaseAgent):
                         similarity_score=sim,
                         matched_keywords=matched_kw,
                         risk_level=risk,
+                        reasoning=reasoning,
+                        mitigation_suggestions=mitigations,
                     ))
                     if risk == "high":
                         max_risk = "high"
@@ -102,12 +151,24 @@ class FTOAnalystAgent(BaseAgent):
         overall = "high" if high_risk > 0 else "medium" if medium_risk > 0 else "low"
 
         recommendations = []
-        if high_risk:
-            recommendations.append(f"Found {high_risk} high-risk patent(s). Immediate legal review recommended.")
-        if medium_risk:
-            recommendations.append(f"Found {medium_risk} medium-risk patent(s). Consider design modifications.")
-        if not analyses:
-            recommendations.append("No significant patent risks identified in target markets.")
+        if use_llm and analyses:
+            import json
+            summary_ctx = json.dumps(
+                {"description": description[:300], "high": high_risk, "medium": medium_risk, "low": low_risk,
+                 "top_risks": [{"patent": a.patent_title, "risk": a.overall_risk, "rec": a.recommendation} for a in analyses[:5]]},
+                default=str,
+            )
+            llm_recs = self._llm.chat_json(_FTO_RECOMMENDATION_SYSTEM, summary_ctx, max_tokens=512)
+            if isinstance(llm_recs, list):
+                recommendations = llm_recs
+
+        if not recommendations:
+            if high_risk:
+                recommendations.append(f"Found {high_risk} high-risk patent(s). Immediate legal review recommended.")
+            if medium_risk:
+                recommendations.append(f"Found {medium_risk} medium-risk patent(s). Consider design modifications.")
+            if not analyses:
+                recommendations.append("No significant patent risks identified in target markets.")
 
         report = FTOReport(
             product_description=description[:200],

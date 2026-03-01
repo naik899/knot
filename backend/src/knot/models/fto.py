@@ -10,6 +10,8 @@ class ClaimMatch(BaseModel):
     similarity_score: float = Field(ge=0, le=1)
     matched_keywords: list[str] = Field(default_factory=list)
     risk_level: str = Field(description="high, medium, low")
+    reasoning: str = ""
+    mitigation_suggestions: list[str] = Field(default_factory=list)
 
 
 class InfringementAnalysis(BaseModel):

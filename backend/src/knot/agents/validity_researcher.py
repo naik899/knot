@@ -1,5 +1,9 @@
 """Agent 8: Validity Researcher - Prior art search with date filtering."""
 
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 from knot.agents.base import BaseAgent
 from knot.models.validity import PriorArtAnalysis, ValidityReport
 from knot.services.similarity import keyword_similarity
@@ -7,13 +11,36 @@ from knot.services.text_processing import extract_keywords
 from knot.stores.patent_store import PatentStore
 from knot.stores.search_store import SearchStore
 
+if TYPE_CHECKING:
+    from knot.services.llm_service import LLMService
+
+_PRIOR_ART_RELEVANCE_SYSTEM = """\
+You are a patent validity analyst. Given a prior art document and target patent \
+claims, assess whether the prior art anticipates or renders obvious the claims.
+
+Return ONLY valid JSON:
+{
+  "relevance_score": 0.0-1.0,
+  "analysis": "2-3 sentence explanation of how the prior art relates to the claims",
+  "anticipates_claims": [list of claim numbers that may be anticipated],
+  "obviousness_claims": [list of claim numbers that may be obvious in view of this art]
+}
+"""
+
+_VALIDITY_OPINION_SYSTEM = """\
+You are a patent validity analyst. Given the prior art search results below, \
+provide a concise validity opinion. State whether the patent appears valid, \
+questionable, or likely invalid, and explain why. Return plain text (not JSON).\
+"""
+
 
 class ValidityResearcherAgent(BaseAgent):
     agent_name = "validity_researcher"
 
-    def __init__(self, patent_store: PatentStore, search_store: SearchStore):
+    def __init__(self, patent_store: PatentStore, search_store: SearchStore, llm_service: "LLMService | None" = None):
         self.patent_store = patent_store
         self.search_store = search_store
+        self._llm = llm_service
 
     def execute(self, task_type: str, payload: dict) -> dict:
         if task_type == "find_prior_art":
@@ -44,18 +71,44 @@ class ValidityResearcherAgent(BaseAgent):
 
         # Score each candidate
         results = []
+        use_llm = self._llm and self._llm.is_available and patent
+
         for candidate in candidates:
             pa_keywords = candidate.keywords
             relevance = keyword_similarity(keywords, pa_keywords)
 
             # Check which claims might be affected
             matched_claims = []
-            if patent:
+            analysis_text = ""
+
+            if use_llm:
+                claims_text = "\n".join(f"Claim {c.number}: {c.text}" for c in patent.claims[:10])
+                user_msg = (
+                    f"Prior art title: {candidate.title}\n"
+                    f"Prior art keywords: {', '.join(pa_keywords)}\n"
+                    f"Prior art date: {candidate.publication_date}\n\n"
+                    f"Target patent claims:\n{claims_text}"
+                )
+                llm_result = self._llm.chat_json(_PRIOR_ART_RELEVANCE_SYSTEM, user_msg, max_tokens=512)
+                if llm_result:
+                    relevance = float(llm_result.get("relevance_score", relevance))
+                    analysis_text = llm_result.get("analysis", "")
+                    matched_claims = (
+                        llm_result.get("anticipates_claims", [])
+                        + llm_result.get("obviousness_claims", [])
+                    )
+                    # Deduplicate
+                    matched_claims = sorted(set(matched_claims))
+
+            if not matched_claims and patent:
                 for claim in patent.claims:
                     claim_kw = extract_keywords(claim.text)
                     claim_sim = keyword_similarity(claim_kw, pa_keywords)
                     if claim_sim > 0.1:
                         matched_claims.append(claim.number)
+
+            if not analysis_text:
+                analysis_text = f"Prior art '{candidate.title}' published {candidate.publication_date} has {relevance:.0%} relevance."
 
             if relevance > 0.05:
                 results.append(PriorArtAnalysis(
@@ -64,7 +117,7 @@ class ValidityResearcherAgent(BaseAgent):
                     relevance_score=relevance,
                     matched_claims=matched_claims,
                     matched_keywords=sorted(set(k.lower() for k in keywords) & set(k.lower() for k in pa_keywords)),
-                    analysis=f"Prior art '{candidate.title}' published {candidate.publication_date} has {relevance:.0%} relevance.",
+                    analysis=analysis_text,
                 ))
 
         results.sort(key=lambda r: r.relevance_score, reverse=True)
@@ -103,6 +156,17 @@ class ValidityResearcherAgent(BaseAgent):
                 validity = "appears_valid"
                 summary = f"Only weak prior art found (max {max_relevance:.0%} relevance). Patent appears valid."
             strongest = results[0]["prior_art_id"] if results else None
+
+            # LLM-powered validity opinion
+            if self._llm and self._llm.is_available:
+                import json
+                context = json.dumps(
+                    {"patent": patent.title, "prior_art": results[:5], "rule_based_validity": validity},
+                    default=str,
+                )
+                llm_opinion = self._llm.chat(_VALIDITY_OPINION_SYSTEM, context, max_tokens=512)
+                if llm_opinion:
+                    summary = llm_opinion
 
         report = ValidityReport(
             target_patent_id=patent_id,

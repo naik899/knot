@@ -1,12 +1,16 @@
 """REST API endpoints for Project Knot."""
 
+import logging
 from typing import Optional
+from uuid import uuid4
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, Field
 
 from knot.api.dependencies import Container, get_container
 from knot.models.messages import AgentRequest
 
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -63,8 +67,30 @@ async def health_check():
 
 @router.post("/query")
 async def query(request: QueryRequest):
-    """Natural language query via Router Agent."""
+    """Natural language query — deep agent with RouterAgent fallback."""
     container = get_container()
+
+    # Try deep agent first
+    if container.deep_agent is not None:
+        try:
+            thread_id = uuid4().hex
+            result = container.deep_agent.invoke(
+                {
+                    "messages": [{"role": "user", "content": request.query}],
+                    "files": container.skill_files or {},
+                },
+                config={"configurable": {"thread_id": thread_id}},
+            )
+            from knot.deepagent.response import extract_response
+
+            response = extract_response(result, request.query)
+            if response and response.get("executive_summary"):
+                return response
+            logger.warning("Deep agent returned empty response — falling back to RouterAgent")
+        except Exception:
+            logger.exception("Deep agent failed — falling back to RouterAgent")
+
+    # Fallback: RouterAgent
     agent_request = AgentRequest(
         source_agent="api",
         target_agent="router",
